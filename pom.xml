@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.jobber</groupId>
+	<artifactId>jobber-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Jobber Server</name>
+
+	<properties>
+		<java.version>1.7</java.version>
+		<jersey.version>2.17</jersey.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	<organization>
+		<name>Banco do Brasil</name>
+		<url>http://www.bb.com.br</url>
+	</organization>
+
+
+	<!--<repositories>-->
+		<!--&lt;!&ndash; WEB-INF/LIB/*.JAR =( &ndash;&gt;-->
+		<!--<repository>-->
+			<!--<id>ProjectRepo</id>-->
+			<!--<name>ProjectRepo</name>-->
+			<!--<url>file://${project.basedir}/WebContent/WEB-INF/lib</url>-->
+		<!--</repository>-->
+		<!--<repository>-->
+			<!--<id>central</id>-->
+			<!--<name>Maven Repository Switchboard</name>-->
+			<!--<layout>default</layout>-->
+			<!--<url>http://repo1.maven.org/maven2</url>-->
+		<!--</repository>-->
+	<!--</repositories>-->
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-processing</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>com.auth0</groupId>-->
+			<!--<artifactId>java-jwt</artifactId>-->
+			<!--<version>2.0.1</version>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.test-framework</groupId>
+			<artifactId>jersey-test-framework-core</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
+			<artifactId>jersey-test-framework-provider-jdk-http</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
